@@ -5,8 +5,16 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"github.com/zakirkun/x/config"
+	"github.com/zakirkun/x/config/yaml"
 	"github.com/zakirkun/x/server"
 )
+
+var cfg *config.Config
+
+func init() {
+	cfg = yaml.NewYamlConfig("./config.yml")
+}
 
 func main() {
 
@@ -23,8 +31,8 @@ func main() {
 
 	opts := server.ServerOptions{
 		Handler: r,
-		Host:    "localhost",
-		Port:    "8081",
+		Host:    cfg.Server.Host,
+		Port:    cfg.Server.Port,
 	}
 
 	srv := server.NewServer(opts)
