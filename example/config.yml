@@ -1,3 +1,10 @@
 server:
   host: localhost
   port: 8082
+database:
+  driver: mysql
+  host: localhost
+  port: 3306
+  dbname: walletkita_main_core 
+  username: walletkita
+  password: W@Ll3tKita! 
