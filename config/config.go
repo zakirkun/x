@@ -41,6 +41,8 @@ type Config struct {
 
 	Caching struct {
 		Address     string        `yaml:"address"`
+		Password    string        `yaml:"password"`
+		Db          int           `yaml:"db"`
 		ExpiredTime time.Duration `yaml:"expiredTime"`
 	} `yaml:"caching"`
 }
